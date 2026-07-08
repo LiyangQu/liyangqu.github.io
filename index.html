@@ -16,7 +16,7 @@
     :root {
       --bg: #0a0a0f;
       --fg: #ffffff;
-      --sub: #b0b0b8;
+      --sub: #a0a0a8;
     }
 
     body {
@@ -28,7 +28,23 @@
       position: relative;
     }
 
-    /* ========== 顶部栏 ========== */
+    /* ======== 地球背景 ======== */
+    .bg-earth {
+      position: fixed;
+      right: -5vw;
+      bottom: -5vh;
+      width: 52vw;
+      height: 52vw;
+      max-width: 900px;
+      max-height: 900px;
+      background: url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=2400&q=100')
+        center / cover no-repeat;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 50%;
+    }
+
+    /* ======== 顶部通栏 ======== */
     .topbar {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -36,11 +52,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2.5rem;
+      padding: 1.2rem 3rem;
+      background: rgba(10, 10, 15, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .topbar-name {
-      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.4vw, 0.9rem);
       font-weight: 400;
       letter-spacing: 0.25em;
       color: var(--sub);
@@ -49,11 +68,11 @@
 
     .topbar-nav {
       display: flex;
-      gap: 2rem;
+      gap: 2.2rem;
     }
 
     .topbar-nav a {
-      font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
       font-weight: 500;
       letter-spacing: 0.2em;
       color: var(--sub);
@@ -67,25 +86,7 @@
       color: var(--fg);
     }
 
-    /* ========== 地球背景 ========== */
-    .bg-earth {
-      position: fixed;
-      right: -8vw;
-      bottom: -8vh;
-      width: 50vw;
-      height: 50vw;
-      max-width: 750px;
-      max-height: 750px;
-      background: url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1200&q=85')
-        center / cover no-repeat;
-      opacity: 0.22;
-      pointer-events: none;
-      z-index: 0;
-      border-radius: 50%;
-      filter: blur(0px);
-    }
-
-    /* ========== 主内容 ========== */
+    /* ======== 主内容区 ======== */
     .main {
       position: relative;
       z-index: 2;
@@ -93,24 +94,24 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 6rem 4rem 4rem 4rem;
+      padding: 5rem 4rem 4rem 4rem;
       max-width: 1000px;
     }
 
     /* 英文口号 */
     .slogan {
-      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+      font-size: clamp(1.8rem, 4.5vw, 3.5rem);
       font-weight: 700;
       letter-spacing: 0.02em;
       line-height: 1.3;
       color: var(--fg);
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
     }
 
     /* 中文骈辞 — 一横排 */
     .motto {
       font-family: 'Noto Serif SC', 'KaiTi', '楷体', 'STKaiti', serif;
-      font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+      font-size: clamp(1.1rem, 2.6vw, 1.6rem);
       font-weight: 400;
       letter-spacing: 0.3em;
       line-height: 2;
@@ -126,11 +127,11 @@
       margin: 2.5rem 0;
     }
 
-    /* 响应式 */
+    /* ======== 响应式 ======== */
     @media (max-width: 768px) {
       .topbar { padding: 0.8rem 1.2rem; }
       .topbar-nav { gap: 1rem; }
-      .main { padding: 5rem 1.5rem 3rem 1.5rem; }
+      .main { padding: 4rem 1.5rem 3rem 1.5rem; }
       .bg-earth { width: 75vw; height: 75vw; right: -20vw; }
     }
   </style>
@@ -140,7 +141,7 @@
   <!-- 地球背景 -->
   <div class="bg-earth"></div>
 
-  <!-- 顶部栏 -->
+  <!-- 顶部通栏 -->
   <div class="topbar">
     <div class="topbar-name">Liyang QU's Page</div>
     <nav class="topbar-nav">
