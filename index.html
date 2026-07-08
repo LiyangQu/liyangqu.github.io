@@ -2,53 +2,61 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Liyang QU's Page</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --bg: #050510;
-      --fg: #ffffff;
-      --sub: rgba(255,255,255,0.65);
-      --accent: #ff4d4d;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing: border-box; }
 
     body {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      background: var(--bg);
-      color: var(--fg);
-      overflow-x: hidden;
+      background: #000;
+      color: #fff;
       min-height: 100vh;
     }
 
-    /* ======== 顶部导航栏 ======== */
+    /* ======== 地球 ======== */
+    .earth {
+      position: fixed;
+      bottom: -2600px;
+      right: -1800px;
+      width: 4000px;
+      height: 4000px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+      animation: earthSpin 300s linear infinite;
+    }
+
+    .earth img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes earthSpin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* ======== 顶部横栏 ======== */
     .topbar {
       position: fixed;
       top: 0; left: 0; right: 0;
+      height: 10vh;
       z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 3rem;
-      background: rgba(5,5,16,0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 0 3vw;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
     }
 
     .topbar-name {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      color: var(--sub);
-      text-transform: uppercase;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      font-size: 2.8vh;
+      color: #fff;
+      text-decoration: none;
     }
 
     .topbar-nav {
@@ -57,110 +65,70 @@
     }
 
     .topbar-nav a {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--sub);
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      font-size: 2.8vh;
+      color: #aaa;
       text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.25s, border-bottom 0.2s;
-      padding-bottom: 0.3rem;
-      border-bottom: 2px solid transparent;
+      transition: color 0.2s;
     }
 
-    .topbar-nav a:hover,
-    .topbar-nav a.active {
-      color: var(--fg);
-      border-bottom: 2px solid var(--accent);
+    .topbar-nav a:hover {
+      color: #fff;
     }
 
-    /* ======== 地球容器 ======== */
-    .earth-wrapper {
-      position: fixed;
-      bottom: -5vh;
-      right: -12vw;
-      width: 55vw;
-      height: 55vw;
-      max-width: 900px;
-      max-height: 900px;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-      border-radius: 50%;
-    }
-
-    .earth-rotating {
-      width: 200%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=3000&q=100')
-        repeat-x;
-      background-size: auto 100%;
-      animation: spin-earth 120s linear infinite;
-      transform: translateX(0);
-    }
-
-    @keyframes spin-earth {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ======== 主内容区 ======== */
+    /* ======== 主内容 ======== */
     .main {
       position: relative;
       z-index: 2;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 4rem 4rem 4rem;
-      max-width: 1000px;
+      max-width: 60vw;
+      padding: 14vh 4vw 4rem;
     }
 
+    /* 英文口号 */
     .slogan {
-      font-size: clamp(2rem, 5.5vw, 4rem);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      line-height: 1.25;
-      color: var(--fg);
-      margin-bottom: 2.2rem;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      font-size: 10vh;
+      line-height: 1.2;
+      margin-bottom: 1.5vh;
+      color: #fff;
+      text-align: left;
     }
 
+    /* 中文骈辞 —— 16字一行，和 Geodetic Errors 差不多长 */
     .motto {
-      font-family: 'Noto Serif SC', 'KaiTi', '楷体', 'STKaiti', serif;
-      font-size: clamp(1.2rem, 2.8vw, 1.75rem);
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      line-height: 2;
-      color: var(--sub);
+      font-family: "仿宋 GB2312", "FangSong", "SimSun", serif;
+      font-weight: bold;
+      font-size: 3.6vh;              /* ✅ 明显再小 */
+      line-height: 1.6;
+      color: #ccc;
+      text-align: left;
+      letter-spacing: 0.25em;
+
+      /* ✅ 强制一行 */
       white-space: nowrap;
+
+      margin-top: 1.5vh;
     }
 
     .divider {
-      width: 60px;
-      height: 1px;
-      background: rgba(255,255,255,0.12);
-      margin: 2.5rem 0;
-    }
-
-    /* ======== 响应式 ======== */
-    @media (max-width: 768px) {
-      .topbar { padding: 0.8rem 1.2rem; }
-      .topbar-nav { gap: 1.2rem; }
-      .main { padding: 4rem 1.5rem 3rem 1.5rem; }
-      .earth-wrapper { width: 80vw; height: 80vw; right: -25vw; }
+      display: none;
     }
   </style>
 </head>
 
 <body>
-  <!-- 地球（右下角，自动旋转） -->
-  <div class="earth-wrapper">
-    <div class="earth-rotating"></div>
+  <!-- 地球 -->
+  <div class="earth">
+    <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=2400&q=100"
+         alt="Earth"
+         onerror="this.src='https://images.unsplash.com/photo-1507400492013-6ebe2f95aab4?w=2400&q=100';">
   </div>
 
-  <!-- 顶部导航 -->
+  <!-- 顶部横栏 -->
   <div class="topbar">
-    <div class="topbar-name">Liyang QU's Page</div>
+    <div class="topbar-name">Liyang QU</div>
     <nav class="topbar-nav">
       <a href="#" class="active">About</a>
       <a href="#">Research</a>
@@ -179,8 +147,6 @@
     <div class="motto">
       差非所屏，乃所由经。界不自形，唯探乃明。
     </div>
-
-    <div class="divider"></div>
   </div>
 
 </body>
