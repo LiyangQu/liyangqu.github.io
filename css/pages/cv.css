@@ -1,0 +1,59 @@
+.cv-container {
+  margin-top: 10vh;
+  padding: 0 6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 10vh);
+}
+
+.cv-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #999;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.cv-download-btn {
+  color: #aaa;
+  border: 1px solid #555;
+  padding: 0.3rem 0.9rem;
+  font-family: "Noto Serif", "Times New Roman", serif !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: color 0.2s, border-color: 0.2s;
+}
+
+.cv-download-btn:hover {
+  color: #fff;
+  border-color: #aaa;
+}
+
+.cv-viewer {
+  width: 100%;
+  max-width: 1000px;
+  flex: 1;
+  border: none;
+  background: #000;
+  filter: invert(1) hue-rotate(180deg) brightness(0.86);
+}
+
+.cv-viewer::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+
+.cv-viewer::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.cv-viewer {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #000;
+}

@@ -1,0 +1,136 @@
+/* =========================
+   Publication Main Layout
+   「极致 CV 风」
+========================= */
+.pub-main {
+  --pub-shift-x: -400px;
+
+  max-width: 920px;
+  margin: 13vh auto 5vh;   /* ✅ 原来 9vh → 13vh */
+  /* 这一行就是你要的“距离” */
+
+  position: relative;
+  left: var(--pub-shift-x);
+
+  padding: 0 4vw;
+}
+
+/* =========================
+   Publication Block（四大栏目）
+   ✅ 行距、呼吸感完全保留
+========================= */
+.pub-block {
+  margin-bottom: 4.2rem;     /* ✅ 栏目之间足够远 */
+}
+
+
+.pub-block h1 {
+  font-family: "Noto Serif", "Noto Serif SC", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 1.4rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(255,255,255,0.08); /* ✅ CV 式底线 */
+  padding-bottom: 0.3rem;
+}
+
+/* =========================
+   单行条目（核心：极致紧凑）
+========================= */
+.pub-entry {
+  margin-bottom: 0.65rem;    /* ✅ 极窄：文献几乎挨在一起 */
+}
+
+.pub-title {
+  font-family: "Noto Serif", "Noto Serif SC", serif;
+  font-size: 1.22rem;
+  line-height: 1.7;
+  white-space: nowrap;
+  overflow: visible;
+  color: #cfcfcf;
+}
+
+.pub-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.pub-title a:hover {
+  border-bottom: 1px solid #888;
+}
+
+/* =========================
+   按钮区（极致克制）
+========================= */
+.pub-buttons {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.15rem 0 0.05rem; /* ✅ 几乎贴着标题 */
+}
+
+.pub-buttons button {
+  background: none;
+  border: 1px solid #4a4a4a;
+  color: #888;
+  font-size: 0.75rem;        /* ✅ 小字：不抢正文 */
+  padding: 0.15rem 0.6rem;
+  cursor: pointer;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+}
+
+.pub-buttons button:hover {
+  border-color: #777;
+  color: #ccc;
+}
+
+/* =========================
+   折叠区（紧凑、辅助性）
+========================= */
+.pub-abstract,
+.pub-bibtex {
+  display: none;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255,255,255,0.035);
+  border-left: 2px solid #555;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #bbb;
+  white-space: pre-wrap;
+  max-width: 100%;
+}
+
+.pub-bibtex {
+  font-family: monospace;
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+
+/* =========================
+   空状态（CV 风格）
+========================= */
+.pub-empty {
+  font-size: 1rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+/* =========================
+   极小屏保护（CV 不折腾）
+========================= */
+@media (max-width: 768px) {
+  .pub-title {
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  .pub-main {
+    margin: 7vh auto 4vh;
+  }
+}

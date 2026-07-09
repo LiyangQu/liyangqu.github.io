@@ -1,0 +1,192 @@
+/* =========================
+   ABOUT – LEFT
+========================= */
+.about-container {
+  display: flex;
+  gap: 5vw;
+  align-items: flex-start;
+}
+
+.about-left {
+  flex: 0 0 auto;
+  width: 26vw;
+  min-width: 240px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(0.2);
+  transition: filter 0.3s ease;
+}
+
+.profile-img:hover {
+  filter: grayscale(0);
+}
+
+.about-info {
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.info-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e6e6e6;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.info-position {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 0.2rem;
+}
+
+.info-institution {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   ABOUT – RIGHT
+========================= */
+.about-right {
+  flex: 1;
+}
+
+.about-right p {
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   EDUCATION & INTERESTS
+========================= */
+.edu-intro-wrapper {
+  display: flex;
+  gap: 4rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.edu-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.edu-block h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+  letter-spacing: 0.04em;
+}
+
+.edu-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edu-block li {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #c0c0c0;
+  margin-bottom: 0.8rem;
+  padding-left: 0;
+}
+
+.edu-block li::before {
+  content: none;
+}
+
+.school {
+  display: block;
+  font-size: 1.125rem;
+  color: #aaa;
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
+/* =========================
+   INDEX / HERO（地球 & 首页文字）
+========================= */
+.hero {
+  position: relative;
+  z-index: 1;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* ✅ 向上抬一行字 */
+  padding-top: calc(16vh);
+
+  padding-left: 6vw;
+  color: #e6e6e6;
+}
+
+/* ---------- 英文：四词左对齐 ---------- */
+.hero-text h1 {
+  text-align: left;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.85);
+}
+
+.hero-text .motto {
+  display: none;
+}
+
+/* ---------- ✅ 中文骈文排版 ---------- */
+.zh-text .hero-text h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  line-height: 1.35;
+}
+
+.zh-text .line {
+  display: block;
+}
+
+/* 阶梯缩进 */
+.zh-text .indent {
+  display: inline-block;
+  width: 1.2em;
+}
+
+/* ✅ 主字：经 / 明（大小不变） */
+.zh-text .major {
+  font-size: 1em;               /* 继承 h1 原始尺寸 */
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* ✅ 辅字：缩小 1～2 号 */
+.zh-text .minor {
+  font-size: 0.82em;            /* ≈ 缩小 2 号 */
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  opacity: 0.88;
+}
+
+/* ✅ 英文版完全不受影响 */
+.en-text .line,
+.en-text .indent,
+.en-text .major,
+.en-text .minor {
+  all: unset;
+}
