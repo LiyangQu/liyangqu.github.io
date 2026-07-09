@@ -1,0 +1,72 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #ccc;
+  font-family: "Noto Serif", "Times New Roman", "Times", "Georgia", serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   中英字体
+========================= */
+.en-only {
+  font-family: "Noto Serif", "Times New Roman", "Times", "Georgia", serif !important;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.zh-only {
+  font-family: "Noto Serif SC", "FangSong", "FangSong_GB2312", "STFangsong", serif !important;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* =========================
+   I18N
+========================= */
+.zh-only,
+.zh-text {
+  display: none !important;
+}
+
+.en-only,
+.en-text {
+  display: inline !important;
+}
+
+html[data-lang="zh"] .en-only,
+html[data-lang="zh"] .en-text {
+  display: none !important;
+}
+
+html[data-lang="zh"] .zh-only,
+html[data-lang="zh"] .zh-text {
+  display: inline !important;
+}
+
+html[data-lang="zh"] .zh-text {
+  display: block !important;
+}
