@@ -1,0 +1,145 @@
+/* =========================
+   RESEARCH PAGE
+========================= */
+.research-container {
+  margin-top: 14vh;
+  padding: 0 6vw;
+  max-width: 1200px;
+}
+
+/* 页面主标题 */
+.research-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #e6e6e6;
+  letter-spacing: 0.04em;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.8rem;
+}
+
+/* =========================
+   研究方向卡片
+========================= */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.research-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.research-card:hover {
+  border-color: #555;
+  transform: translateY(-4px);
+}
+
+.research-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #dcdcdc;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.research-card p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+/* =========================
+   研究项目列表
+========================= */
+.research-projects {
+  margin-top: 3rem;
+}
+
+.research-projects h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.research-project-item {
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #444;
+  transition: border-color 0.3s;
+}
+
+.research-project-item:hover {
+  border-left-color: #cc4444;
+}
+
+.research-project-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.research-project-meta {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+.research-project-item p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+/* =========================
+   关键词标签
+========================= */
+.research-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.research-tag {
+  font-size: 0.95rem;
+  color: #999;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .research-title {
+    font-size: 1.75rem;
+  }
+
+  .research-card h3,
+  .research-project-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .research-card p,
+  .research-project-item p {
+    font-size: 1.1rem;
+  }
+}
