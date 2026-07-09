@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CV – Liyang QU</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
+  <script defer src="js/lang.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">Liyang QU</a>
+  <nav class="site-nav">
+    <a href="about.html"><span class="en-only">ABOUT</span><span class="zh-only">关于</span></a>
+    <a href="research.html"><span class="en-only">RESEARCH</span><span class="zh-only">研究</span></a>
+    <a href="publication.html"><span class="en-only">PUBLICATION</span><span class="zh-only">成果</span></a>
+    <a href="cv.html" class="active"><span class="en-only">CV</span><span class="zh-only">简历</span></a>
+    <div class="lang-switcher">
+      <span class="lang en active">EN</span>
+      <div class="slider"><div class="thumb"></div></div>
+      <span class="lang zh">简</span>
+    </div>
+  </nav>
+</header>
+
+<main class="cv-container">
+  <!-- 顶部工具栏 -->
+  <div class="cv-toolbar">
+    <span class="en-only">Curriculum Vitae</span>
+    <span class="zh-only">个人简历（CV）</span>
+    <a href="assets/CV_LiyangQU.pdf" target="_blank" class="cv-download-btn">
+      <span class="en-only">Open in New Tab</span>
+      <span class="zh-only">新标签页打开</span>
+    </a>
+  </div>
+
+  <!-- PDF 内嵌预览 -->
+  <iframe
+    src="assets/CV_LiyangQU.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
+    class="cv-viewer"
+    title="CV Preview"
+    loading="lazy">
+  </iframe>
+</main>
+
+</body>
+</html>
